@@ -11,7 +11,8 @@ RUN /opt/conda/bin/conda install -c conda-forge -c fvcore -c iopath fvcore iopat
 RUN apt update -y && \
     apt install -y zsh git tig tmux vim && \
     apt install -y wget curl && \
-    apt install -y jq zip unzip
+    apt install -y jq zip unzip && \
+    rm -rf /var/lib/apt/lists/*
 
 RUN /opt/conda/bin/pip install --upgrade pip && \
     /opt/conda/bin/pip install scikit-learn -U meshio h5py && \
